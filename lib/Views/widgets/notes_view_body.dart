@@ -10,11 +10,14 @@ class NotesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(right: 24,left: 24,top: 16),
+        padding: EdgeInsets.only(right: 24, left: 24, top: 16),
         child: Column(
           children: [
             // SizedBox(height: 16,),
-            CustomAppBar(),
+            CustomAppBar(
+              title: 'Title',
+              icon: Icons.search,
+            ),
             Expanded(
               child: CustomNotesListView(),
             ),
@@ -24,5 +27,3 @@ class NotesViewBody extends StatelessWidget {
     );
   }
 }
-
-
