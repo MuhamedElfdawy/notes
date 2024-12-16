@@ -7,10 +7,17 @@ class CustomAddNoteSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16),
+      padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
       child: Column(
         children: [
-          CustomTextField(),
+          CustomTextField(
+            hint: 'Title',
+          ),
+          SizedBox(height: 16,),
+          CustomTextField(
+            hint: 'Content',
+            maxLine: 5,
+          ),
         ],
       ),
     );
