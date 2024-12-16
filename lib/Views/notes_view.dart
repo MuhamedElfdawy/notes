@@ -12,13 +12,14 @@ class NotesView extends StatelessWidget {
       body: const NotesViewBody(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showModalBottomSheet(context: context, builder: (context) =>const CustomAddNoteSheet(),);
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => const CustomAddNoteSheet(),
+          );
         },
         backgroundColor: primaryColor,
-        child:  const Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
 }
-
-
