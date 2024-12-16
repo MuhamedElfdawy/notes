@@ -18,7 +18,7 @@ class NotesView extends StatelessWidget {
           );
         },
         backgroundColor: primaryColor,
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add,color: Colors.black,),
       ),
     );
   }
