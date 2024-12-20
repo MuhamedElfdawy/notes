@@ -9,10 +9,12 @@ import 'package:notes/simple_bloc_observer.dart';
 
 void main() async{
 
-  Bloc.observer = SimpleBlocObserver();
+  WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await Hive.openBox(notesBox);
+  Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
+  await Hive.openBox<NoteModel>(notesBox);
+
   runApp(const NotesApp());
 }
 
