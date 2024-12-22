@@ -6,20 +6,22 @@ import 'note_item.dart';
 
 class CustomNotesListView extends StatelessWidget {
   const CustomNotesListView({super.key});
-  final colorData =const [];
+
+  final colorData = const [];
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NotesCubit,NotesState>(
-        builder: (context, state) {
-
-          List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes ?? [];
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            child: ListView.builder(
-              itemCount: notes.length,
-              itemBuilder: (context, index) => const NoteItem(),
-            ),
-          );
-        },);
+    return BlocBuilder<NotesCubit, NotesState>(
+      builder: (context, state) {
+        BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes ?? [];
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          child: ListView.builder(
+            itemCount: notes.length,
+            itemBuilder: (context, index) => const NoteItem(),
+          ),
+        );
+      },
+    );
   }
 }
